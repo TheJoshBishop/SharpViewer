@@ -40,6 +40,7 @@ namespace SharpViewer
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 //This is a test comment for github commits
+                //This is another test comment for github commits
             }
         }
     }
