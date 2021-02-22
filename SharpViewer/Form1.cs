@@ -28,6 +28,7 @@ namespace SharpViewer
             Text = ":)";
             //this is async change
             //Wassap
+            //yo
         }
 
         private void btnRight_Click(object sender, EventArgs e)
@@ -44,6 +45,11 @@ namespace SharpViewer
                 //This is a test comment for github commits
                 //This is another test comment for github commits
             }
+        }
+
+        private void imgLoaded_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
