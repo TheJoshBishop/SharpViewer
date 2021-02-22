@@ -26,6 +26,7 @@ namespace SharpViewer
         private void btnLeft_Click(object sender, EventArgs e)
         {
             Text = ":)";
+            //this is async change
         }
 
         private void btnRight_Click(object sender, EventArgs e)
