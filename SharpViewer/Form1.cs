@@ -14,9 +14,10 @@ namespace SharpViewer
     public partial class Form1 : Form
     {
 
-        List<Bitmap> images;
+        Bitmap[] images;
         string[] rawFiles;
         string folderDirectory = "";
+        int imgIndex = 0;
         public Form1()
         {
             splashscreen();
@@ -43,6 +44,7 @@ namespace SharpViewer
         {
 
             Text = ":)";
+            GotoPreviousImage();
             //this is async change
             //Wassap
             //yo
@@ -51,6 +53,7 @@ namespace SharpViewer
         public void btnRight_Click(object sender, EventArgs e)
         {
             Text = ":D";
+            GotoNextImage();
         }
 
         private void menuFileOpen_Click(object sender, EventArgs e)
@@ -67,7 +70,19 @@ namespace SharpViewer
 
                 folderDirectory = Path.GetDirectoryName(openDialog.FileName);
 
-                rawFiles = Directory.GetFiles(folderDirectory);
+                rawFiles = Directory.GetFiles(folderDirectory, "*.png");
+                foreach (string s in rawFiles)
+                {
+                    lblImgName.Text += s + "\n";
+                }
+
+                Bitmap[] imgs = new Bitmap[rawFiles.Length];
+                images = imgs;
+
+                for (int i = 0; i < images.Length; i++)
+                {
+                    images[i] = new Bitmap(rawFiles[i]);
+                }
                 
                 openDialog.Dispose();
 
@@ -91,11 +106,29 @@ namespace SharpViewer
 
         void GotoNextImage()
         {
-            //Increase the index for the images array?
+            //Decrerase the index for the images array?
+            if (imgIndex + 1 > images.Length - 1)
+            {
+                imgIndex = 0;
+            }
+            else
+            {
+                imgIndex++;
+            }
+            imgLoaded.Image = images[imgIndex];
         }
         void GotoPreviousImage()
         {
             //Decrerase the index for the images array?
+            if (imgIndex - 1 < 0)
+            {
+                imgIndex = images.Length - 1;
+            }
+            else
+            {
+                imgIndex--;
+            }
+            imgLoaded.Image = images[imgIndex];
         }
 
         Bitmap[] getImages(string directory)//This might not be necessary...
