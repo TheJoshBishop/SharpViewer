@@ -15,9 +15,10 @@ namespace SharpViewer
     public partial class Form1 : Form
     {
 
-        List<Bitmap> images;
+        Bitmap[] images;
         string[] rawFiles;
         string folderDirectory = "";
+        int imgIndex = 0;
         
             
         public Form1()
