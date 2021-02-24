@@ -29,6 +29,7 @@ namespace SharpViewer
             //this is async change
             //Wassap
             //yo
+            // :)
         }
 
         private void btnRight_Click(object sender, EventArgs e)
