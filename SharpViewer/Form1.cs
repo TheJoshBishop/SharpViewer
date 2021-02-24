@@ -8,39 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace SharpViewer
 {
     public partial class Form1 : Form
     {
 
-        Bitmap[] images;
+        List<Bitmap> images;
         string[] rawFiles;
-        List<string> sRawFiles;
         string folderDirectory = "";
-        int imgIndex = 0;
+        
+            
         public Form1()
         {
-            splashscreen();
-
+            Thread t = new Thread(new ThreadStart(splashscreen));
+            t.Start();
+            Thread.Sleep(6000);
             InitializeComponent();
-            //doesn't hurt to try again i suppose, if y'all got the time
-            //do y'all want to chat on discord and see if we can figure out github?
-            //im down if we all want to try i dont have much time but ill stay as long as can
-            //noice
+            t.Abort();
         }
 
         public void splashscreen()
         {
-            //AppDomainInitializer()
+            Application.Run(new splashscreen());
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
-
-            sRawFiles = new List<string>();
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -54,21 +51,19 @@ namespace SharpViewer
         {
 
             Text = ":)";
-            GotoPreviousImage();
-            //this is async change
-            //Wassap
-            //yo
+         
         }
 
         public void btnRight_Click(object sender, EventArgs e)
         {
             Text = ":D";
-            GotoNextImage();
         }
 
         private void menuFileOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
+
+            
 
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
@@ -78,21 +73,7 @@ namespace SharpViewer
 
                 folderDirectory = Path.GetDirectoryName(openDialog.FileName);
 
-                foreach (string file in Directory.GetFiles(folderDirectory, "*.*", SearchOption.AllDirectories))
-                {
-                    if (IsCorrectFileType(file.ToLower()))
-                    {
-                        sRawFiles.Add(file);
-                    }
-                }
-
-                Bitmap[] imgs = new Bitmap[sRawFiles.Count];
-                images = imgs;
-
-                for (int i = 0; i < images.Length; i++)
-                {
-                    images[i] = new Bitmap(sRawFiles[i]);
-                }
+                rawFiles = Directory.GetFiles(folderDirectory);
                 
                 openDialog.Dispose();
 
@@ -116,16 +97,7 @@ namespace SharpViewer
 
         void GotoNextImage()
         {
-            //Decrerase the index for the images array?
-            if (imgIndex + 1 > images.Length - 1)
-            {
-                imgIndex = 0;
-            }
-            else
-            {
-                imgIndex++;
-            }
-            imgLoaded.Image = images[imgIndex];
+            //Increase the index for the images array?
         }
         void GotoPreviousImage()
         {
@@ -139,6 +111,8 @@ namespace SharpViewer
                 imgIndex--;
             }
             imgLoaded.Image = images[imgIndex];
+
+            
         }
 
         Bitmap[] getImages(string directory)//This might not be necessary...

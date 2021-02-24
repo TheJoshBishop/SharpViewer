@@ -72,7 +72,7 @@ namespace SharpViewer
             this.lblImgName.Location = new System.Drawing.Point(449, 11);
             this.lblImgName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImgName.Name = "lblImgName";
-            this.lblImgName.Size = new System.Drawing.Size(82, 25);
+            this.lblImgName.Size = new System.Drawing.Size(67, 20);
             this.lblImgName.TabIndex = 2;
             this.lblImgName.Text = "Img.png";
             // 
@@ -98,7 +98,7 @@ namespace SharpViewer
             // menuFileOpen
             // 
             this.menuFileOpen.Name = "menuFileOpen";
-            this.menuFileOpen.Size = new System.Drawing.Size(128, 26);
+            this.menuFileOpen.Size = new System.Drawing.Size(103, 22);
             this.menuFileOpen.Text = "Open";
             this.menuFileOpen.Click += new System.EventHandler(this.menuFileOpen_Click);
             // 
