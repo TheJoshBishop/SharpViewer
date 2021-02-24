@@ -109,7 +109,6 @@ namespace SharpViewer
             this.imgLoaded.Size = new System.Drawing.Size(784, 377);
             this.imgLoaded.TabIndex = 4;
             this.imgLoaded.TabStop = false;
-            this.imgLoaded.Click += new System.EventHandler(this.imgLoaded_Click);
             // 
             // Form1
             // 

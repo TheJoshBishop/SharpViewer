@@ -30,7 +30,7 @@ namespace SharpViewer
 
         public void splashscreen()
         {
-            AppDomainInitializer()
+            //AppDomainInitializer()
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace SharpViewer
                 {
                     if (IsCorrectFileType(file))
                     {
-                        images.Add();
+                        //images.Add();
                     }
                 }
 
@@ -105,9 +105,9 @@ namespace SharpViewer
         {
             // pull the images from the folder based on the directory given
             return new Bitmap[0];
-                //This is a test comment for github commits
-                //This is another test comment for github commits
-            }
+            //This is a test comment for github commits
+            //This is another test comment for github commits
         }
     }
 }
+
