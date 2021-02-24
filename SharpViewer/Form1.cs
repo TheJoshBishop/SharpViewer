@@ -38,6 +38,13 @@ namespace SharpViewer
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
         }
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Right)
+            {
+                //stuff happens here when you press the right arrow key
+            }
+        }
 
         public void btnLeft_Click(object sender, EventArgs e)
         {

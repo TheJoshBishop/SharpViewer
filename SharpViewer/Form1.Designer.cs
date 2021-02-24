@@ -36,6 +36,7 @@ namespace SharpViewer
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.imgLoaded = new System.Windows.Forms.PictureBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoaded)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,7 @@ namespace SharpViewer
             // 
             this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeft.Location = new System.Drawing.Point(321, 475);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(116, 64);
             this.btnLeft.TabIndex = 0;
@@ -56,7 +57,7 @@ namespace SharpViewer
             // 
             this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRight.Location = new System.Drawing.Point(629, 475);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(116, 64);
             this.btnRight.TabIndex = 1;
@@ -82,7 +83,7 @@ namespace SharpViewer
             this.menuFile});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,7 +92,7 @@ namespace SharpViewer
             this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuFileOpen});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(46, 24);
+            this.menuFile.Size = new System.Drawing.Size(46, 26);
             this.menuFile.Text = "File";
             // 
             // menuFileOpen
@@ -104,27 +105,36 @@ namespace SharpViewer
             // imgLoaded
             // 
             this.imgLoaded.Location = new System.Drawing.Point(140, 70);
-            this.imgLoaded.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLoaded.Margin = new System.Windows.Forms.Padding(4);
             this.imgLoaded.Name = "imgLoaded";
             this.imgLoaded.Size = new System.Drawing.Size(784, 377);
             this.imgLoaded.TabIndex = 4;
             this.imgLoaded.TabStop = false;
+            // 
+            // testLabel
+            // 
+            this.testLabel.Location = new System.Drawing.Point(0, 0);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(100, 23);
+            this.testLabel.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.testLabel);
             this.Controls.Add(this.imgLoaded);
             this.Controls.Add(this.lblImgName);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoaded)).EndInit();
@@ -142,6 +152,7 @@ namespace SharpViewer
         private System.Windows.Forms.ToolStripMenuItem menuFile;
         private System.Windows.Forms.ToolStripMenuItem menuFileOpen;
         private System.Windows.Forms.PictureBox imgLoaded;
+        private System.Windows.Forms.Label testLabel;
     }
 }
 
