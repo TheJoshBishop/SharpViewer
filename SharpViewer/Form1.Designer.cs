@@ -44,7 +44,7 @@ namespace SharpViewer
             // 
             this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeft.Location = new System.Drawing.Point(321, 475);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(116, 64);
             this.btnLeft.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace SharpViewer
             // 
             this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRight.Location = new System.Drawing.Point(629, 475);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(116, 64);
             this.btnRight.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace SharpViewer
             this.lblImgName.Location = new System.Drawing.Point(449, 11);
             this.lblImgName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImgName.Name = "lblImgName";
-            this.lblImgName.Size = new System.Drawing.Size(82, 25);
+            this.lblImgName.Size = new System.Drawing.Size(67, 20);
             this.lblImgName.TabIndex = 2;
             this.lblImgName.Text = "Img.png";
             // 
@@ -82,7 +82,7 @@ namespace SharpViewer
             this.menuFile});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,20 +91,20 @@ namespace SharpViewer
             this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuFileOpen});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(46, 24);
+            this.menuFile.Size = new System.Drawing.Size(37, 20);
             this.menuFile.Text = "File";
             // 
             // menuFileOpen
             // 
             this.menuFileOpen.Name = "menuFileOpen";
-            this.menuFileOpen.Size = new System.Drawing.Size(128, 26);
+            this.menuFileOpen.Size = new System.Drawing.Size(103, 22);
             this.menuFileOpen.Text = "Open";
             this.menuFileOpen.Click += new System.EventHandler(this.menuFileOpen_Click);
             // 
             // imgLoaded
             // 
             this.imgLoaded.Location = new System.Drawing.Point(140, 70);
-            this.imgLoaded.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLoaded.Margin = new System.Windows.Forms.Padding(4);
             this.imgLoaded.Name = "imgLoaded";
             this.imgLoaded.Size = new System.Drawing.Size(784, 377);
             this.imgLoaded.TabIndex = 4;
@@ -121,7 +121,7 @@ namespace SharpViewer
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
