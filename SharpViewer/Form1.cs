@@ -139,8 +139,6 @@ namespace SharpViewer
                 imgIndex--;
             }
             imgLoaded.Image = images[imgIndex];
-
-            
         }
 
         Bitmap[] getImages(string directory)//This might not be necessary...
