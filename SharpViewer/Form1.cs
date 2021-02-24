@@ -16,6 +16,7 @@ namespace SharpViewer
 
         Bitmap[] images;
         string[] rawFiles;
+        List<string> sRawFiles;
         string folderDirectory = "";
         int imgIndex = 0;
         public Form1()
@@ -38,6 +39,8 @@ namespace SharpViewer
         {
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
+
+            sRawFiles = new List<string>();
         }
 
         public void btnLeft_Click(object sender, EventArgs e)
@@ -60,8 +63,6 @@ namespace SharpViewer
         {
             OpenFileDialog openDialog = new OpenFileDialog();
 
-            
-
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 lblImgName.Text = openDialog.SafeFileName;
@@ -70,18 +71,20 @@ namespace SharpViewer
 
                 folderDirectory = Path.GetDirectoryName(openDialog.FileName);
 
-                rawFiles = Directory.GetFiles(folderDirectory, "*.png");
-                foreach (string s in rawFiles)
+                foreach (string file in Directory.GetFiles(folderDirectory, "*.*", SearchOption.AllDirectories))
                 {
-                    lblImgName.Text += s + "\n";
+                    if (IsCorrectFileType(file.ToLower()))
+                    {
+                        sRawFiles.Add(file);
+                    }
                 }
 
-                Bitmap[] imgs = new Bitmap[rawFiles.Length];
+                Bitmap[] imgs = new Bitmap[sRawFiles.Count];
                 images = imgs;
 
                 for (int i = 0; i < images.Length; i++)
                 {
-                    images[i] = new Bitmap(rawFiles[i]);
+                    images[i] = new Bitmap(sRawFiles[i]);
                 }
                 
                 openDialog.Dispose();
@@ -129,6 +132,8 @@ namespace SharpViewer
                 imgIndex--;
             }
             imgLoaded.Image = images[imgIndex];
+
+            
         }
 
         Bitmap[] getImages(string directory)//This might not be necessary...
