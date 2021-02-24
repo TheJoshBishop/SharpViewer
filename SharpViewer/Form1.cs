@@ -56,22 +56,19 @@ namespace SharpViewer
         private void menuFileOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
-            openDialog.ShowDialog();
+
+            
+
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
-                rawFiles = Directory.GetFiles(openDialog.FileName);
-
-                foreach (string file in rawFiles)
-                {
-                    if (IsCorrectFileType(file))
-                    {
-                        //images.Add();
-                    }
-                }
+                lblImgName.Text = openDialog.SafeFileName;
 
                 imgLoaded.Image = new Bitmap(openDialog.FileName);
 
-                // set folderDirectory to whatever the image directory is
+                folderDirectory = Path.GetDirectoryName(openDialog.FileName);
+
+                rawFiles = Directory.GetFiles(folderDirectory);
+                
                 openDialog.Dispose();
 
                 btnLeft.Enabled = true;
