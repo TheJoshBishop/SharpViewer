@@ -50,13 +50,13 @@ namespace SharpViewer
 
         public void btnLeft_Click(object sender, EventArgs e)
         {
-
+            GotoPreviousImage();
             Text = ":)";
-         
         }
 
         public void btnRight_Click(object sender, EventArgs e)
         {
+            GotoNextImage();
             Text = ":D";
         }
 
@@ -75,6 +75,15 @@ namespace SharpViewer
                 folderDirectory = Path.GetDirectoryName(openDialog.FileName);
 
                 rawFiles = Directory.GetFiles(folderDirectory);
+                images = new Bitmap[rawFiles.Length];
+
+                for (int i = 0; i < images.Length; i++)
+                {
+                    if (IsCorrectFileType(rawFiles[i]))
+                    {
+                        images[i] = new Bitmap(rawFiles[i]);
+                    }
+                }
                 
                 openDialog.Dispose();
 
@@ -98,6 +107,15 @@ namespace SharpViewer
 
         void GotoNextImage()
         {
+            if (imgIndex > images.Length - 1)
+            {
+                imgIndex = 0;
+            }
+            else
+            {
+                imgIndex++;
+            }
+            imgLoaded.Image = images[imgIndex];
             //Increase the index for the images array?
         }
         void GotoPreviousImage()
