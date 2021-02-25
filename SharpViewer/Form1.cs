@@ -94,7 +94,7 @@ namespace SharpViewer
 
         bool IsCorrectFileType(string file)
         {
-            if (file.Contains(".jpg") || file.Contains(".png") || file.Contains(".bmp") || file.Contains(".jpeg"))
+            if (file.Contains(".jpg") || file.Contains(".png") || file.Contains(".bmp") || file.Contains(".jpeg") || file.Contains(".gif"))
             {
                 return true;
 
@@ -107,7 +107,7 @@ namespace SharpViewer
 
         void GotoNextImage()
         {
-            if (imgIndex > images.Length - 1)
+            if (imgIndex >= images.Length - 1)
             {
                 imgIndex = 0;
             }
