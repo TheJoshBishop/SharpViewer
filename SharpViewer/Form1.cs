@@ -19,6 +19,7 @@ namespace SharpViewer
         string[] rawFiles;
         string folderDirectory = "";
         int imgIndex = 0;
+        bool imgOpened = false;
         
             
         public Form1()
@@ -93,6 +94,8 @@ namespace SharpViewer
 
                 btnLeft.Enabled = true;
                 btnRight.Enabled = true;
+
+                imgOpened = true;
             }
         }
 
@@ -111,31 +114,44 @@ namespace SharpViewer
 
         void GotoNextImage()
         {
-            if (imgIndex >= images.Length - 1)
+            if (imgOpened == true)
             {
-                imgIndex = 0;
+                if (imgIndex >= images.Length - 1)
+                {
+                    imgIndex = 0;
+                }
+                else
+                {
+                    imgIndex++;
+                }
+                imgLoaded.Image = images[imgIndex];
             }
             else
             {
-                imgIndex++;
+                return;
             }
-            imgLoaded.Image = images[imgIndex];
+            
             //Increase the index for the images array?
         }
         void GotoPreviousImage()
         {
             //Decrerase the index for the images array?
-            if (imgIndex - 1 < 0)
+            if (imgOpened == true)
             {
-                imgIndex = images.Length - 1;
+                if (imgIndex - 1 < 0)
+                {
+                    imgIndex = images.Length - 1;
+                }
+                else
+                {
+                    imgIndex--;
+                }
+                imgLoaded.Image = images[imgIndex];
             }
             else
             {
-                imgIndex--;
+                return;
             }
-            imgLoaded.Image = images[imgIndex];
-
-            
         }
 
         Bitmap[] getImages(string directory)//This might not be necessary...
