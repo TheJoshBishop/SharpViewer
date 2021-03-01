@@ -40,11 +40,18 @@ namespace SharpViewer
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
         }
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void Form1_KeyDownRight(object sender, KeyEventArgs e)
         {
             if (e.KeyCode==Keys.Right)
             {
-                //stuff happens here when you press the right arrow key
+                //stuff happens here when you press the right arrow key (next button)
+            }
+        }
+        private void Form1_KeyDownLeft(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                //stuff happens here when you press the left arrow key (previous button)
             }
         }
 

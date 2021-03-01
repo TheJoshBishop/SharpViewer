@@ -121,7 +121,8 @@ namespace SharpViewer
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDownRight);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDownLeft);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoaded)).EndInit();
