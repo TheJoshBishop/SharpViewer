@@ -40,16 +40,13 @@ namespace SharpViewer
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
         }
-        private void Form1_KeyDownRight(object sender, KeyEventArgs e)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode==Keys.Right)
             {
                 GotoNextImage();
             }
-        }
-        private void Form1_KeyDownLeft(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Left)
+            else if (e.KeyCode == Keys.Left)
             {
                 GotoPreviousImage();
             }
