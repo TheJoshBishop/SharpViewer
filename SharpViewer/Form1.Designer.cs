@@ -43,6 +43,7 @@ namespace SharpViewer
             // 
             // btnLeft
             // 
+            this.btnLeft.CausesValidation = false;
             this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeft.Location = new System.Drawing.Point(241, 386);
             this.btnLeft.Name = "btnLeft";
@@ -55,6 +56,7 @@ namespace SharpViewer
             // 
             // btnRight
             // 
+            this.btnRight.CausesValidation = false;
             this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRight.Location = new System.Drawing.Point(472, 386);
             this.btnRight.Name = "btnRight";

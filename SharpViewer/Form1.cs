@@ -41,6 +41,9 @@ namespace SharpViewer
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
 
+            btnLeft.TabStop = false;
+            btnRight.TabStop = false;
+
             this.TopMost = true;
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
