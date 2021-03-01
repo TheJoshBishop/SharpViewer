@@ -36,6 +36,7 @@ namespace SharpViewer
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.imgLoaded = new System.Windows.Forms.PictureBox();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoaded)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace SharpViewer
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(87, 52);
             this.btnLeft.TabIndex = 0;
+            this.btnLeft.TabStop = false;
             this.btnLeft.Text = "Previous";
             this.btnLeft.UseVisualStyleBackColor = true;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
@@ -58,6 +60,7 @@ namespace SharpViewer
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(87, 52);
             this.btnRight.TabIndex = 1;
+            this.btnRight.TabStop = false;
             this.btnRight.Text = "Next";
             this.btnRight.UseVisualStyleBackColor = true;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
@@ -87,7 +90,8 @@ namespace SharpViewer
             // menuFile
             // 
             this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuFileOpen});
+            this.menuFileOpen,
+            this.optionsToolStripMenuItem});
             this.menuFile.Name = "menuFile";
             this.menuFile.Size = new System.Drawing.Size(37, 20);
             this.menuFile.Text = "File";
@@ -95,7 +99,7 @@ namespace SharpViewer
             // menuFileOpen
             // 
             this.menuFileOpen.Name = "menuFileOpen";
-            this.menuFileOpen.Size = new System.Drawing.Size(103, 22);
+            this.menuFileOpen.Size = new System.Drawing.Size(180, 22);
             this.menuFileOpen.Text = "Open";
             this.menuFileOpen.Click += new System.EventHandler(this.menuFileOpen_Click);
             // 
@@ -106,6 +110,13 @@ namespace SharpViewer
             this.imgLoaded.Size = new System.Drawing.Size(588, 306);
             this.imgLoaded.TabIndex = 4;
             this.imgLoaded.TabStop = false;
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -119,7 +130,8 @@ namespace SharpViewer
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SharpViewer";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.menuStrip1.ResumeLayout(false);
@@ -139,6 +151,7 @@ namespace SharpViewer
         private System.Windows.Forms.ToolStripMenuItem menuFile;
         private System.Windows.Forms.ToolStripMenuItem menuFileOpen;
         private System.Windows.Forms.PictureBox imgLoaded;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
     }
 }
 

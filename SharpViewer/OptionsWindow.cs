@@ -16,5 +16,15 @@ namespace SharpViewer
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void OptionsWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Save the user data
+        }
     }
 }

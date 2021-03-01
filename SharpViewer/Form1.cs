@@ -40,14 +40,16 @@ namespace SharpViewer
         {
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
+
+            this.TopMost = true;
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Right)
+            if (e.KeyCode==Keys.Right || e.KeyCode == Keys.N)
             {
                 GotoNextImage();
             }
-            else if (e.KeyCode == Keys.Left)
+            else if (e.KeyCode == Keys.Left || e.KeyCode == Keys.L)
             {
                 GotoPreviousImage();
             }
@@ -160,6 +162,12 @@ namespace SharpViewer
             return new Bitmap[0];
             //This is a test comment for github commits
             //This is another test comment for github commits
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OptionsWindow ow = new OptionsWindow();
+            ow.Show();
         }
     }
 }
