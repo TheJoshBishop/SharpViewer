@@ -44,14 +44,14 @@ namespace SharpViewer
         {
             if (e.KeyCode==Keys.Right)
             {
-                //stuff happens here when you press the right arrow key (next button)
+                GotoNextImage();
             }
         }
         private void Form1_KeyDownLeft(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
             {
-                //stuff happens here when you press the left arrow key (previous button)
+                GotoPreviousImage();
             }
         }
 
