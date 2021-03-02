@@ -85,6 +85,7 @@ namespace SharpViewer
             this.Text = "Options";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OptionsWindow_FormClosing);
+            this.Load += new System.EventHandler(this.OptionsWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

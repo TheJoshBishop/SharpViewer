@@ -176,6 +176,7 @@ namespace SharpViewer
                     imgIndex--;
                 }
                 imgLoaded.Image = images[imgIndex];
+                lblImgName.Text = Path.GetFileName(rawFiles[imgIndex]);
             }
             else
             {
