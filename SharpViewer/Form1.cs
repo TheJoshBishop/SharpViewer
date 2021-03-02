@@ -29,6 +29,9 @@ namespace SharpViewer
             t.Start();
             Thread.Sleep(6000);
             InitializeComponent();
+            this.WindowState = FormWindowState.Minimized;
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
             t.Abort();
         }
 
