@@ -38,6 +38,7 @@ namespace SharpViewer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             btnLeft.Enabled = false;
             btnRight.Enabled = false;
 
@@ -45,6 +46,11 @@ namespace SharpViewer
             btnRight.TabStop = false;
 
             this.TopMost = true;
+
+            foreach (Control control in this.Controls)
+            {
+                control.PreviewKeyDown += new PreviewKeyDownEventHandler(control_PreviewKeyDown);
+            }
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -55,6 +61,14 @@ namespace SharpViewer
             else if (e.KeyCode == Keys.Left || e.KeyCode == Keys.L)
             {
                 GotoPreviousImage();
+            }
+        }
+
+        void control_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            {
+                e.IsInputKey = true;
             }
         }
 

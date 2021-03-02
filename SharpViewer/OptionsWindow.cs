@@ -23,7 +23,7 @@ namespace SharpViewer
         }
 
         private void OptionsWindow_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        { 
             //Save the user data
         }
     }
