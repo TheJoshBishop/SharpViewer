@@ -132,7 +132,6 @@ namespace SharpViewer
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "main";
             this.Text = "SharpViewer";

@@ -80,6 +80,7 @@ namespace SharpViewer
             this.MinimizeBox = false;
             this.Name = "OptionsWindow";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Options";
             this.TopMost = true;
