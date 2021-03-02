@@ -23,16 +23,19 @@ namespace SharpViewer
         
             
         public main()
-        {
-            //Starts the program with the splashscreen, waits 6 seconds, then opens the program.
-            Thread t = new Thread(new ThreadStart(splashscreen));
-            t.Start();
-            Thread.Sleep(6000);
+        {  if choice = true
+                {
+                //Starts the program with the splashscreen, waits 6 seconds, then opens the program.
+                Thread t = new Thread(new ThreadStart(splashscreen));
+                t.Start();
+                Thread.Sleep(6000);
+                t.Abort();
+            }
             InitializeComponent();
             this.WindowState = FormWindowState.Minimized;// checks if the form is Minimized
             this.Show(); //shows the image
             this.WindowState = FormWindowState.Normal;//makes it show up in front of any background programs
-            t.Abort();
+            
         }
 
         public void splashscreen()
