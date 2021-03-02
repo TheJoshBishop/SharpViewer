@@ -35,8 +35,8 @@ namespace SharpViewer
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.imgLoaded = new System.Windows.Forms.PictureBox();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imgLoaded = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoaded)).BeginInit();
             this.SuspendLayout();
@@ -101,24 +101,25 @@ namespace SharpViewer
             // menuFileOpen
             // 
             this.menuFileOpen.Name = "menuFileOpen";
-            this.menuFileOpen.Size = new System.Drawing.Size(180, 22);
+            this.menuFileOpen.Size = new System.Drawing.Size(116, 22);
             this.menuFileOpen.Text = "Open";
             this.menuFileOpen.Click += new System.EventHandler(this.menuFileOpen_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // imgLoaded
             // 
             this.imgLoaded.Location = new System.Drawing.Point(105, 57);
             this.imgLoaded.Name = "imgLoaded";
             this.imgLoaded.Size = new System.Drawing.Size(588, 306);
+            this.imgLoaded.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgLoaded.TabIndex = 4;
             this.imgLoaded.TabStop = false;
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.optionsToolStripMenuItem.Text = "Options";
-            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // Form1
             // 
