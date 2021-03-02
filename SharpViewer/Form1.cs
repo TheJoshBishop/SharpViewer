@@ -29,9 +29,9 @@ namespace SharpViewer
             t.Start();
             Thread.Sleep(6000);
             InitializeComponent();
-            this.WindowState = FormWindowState.Minimized;
-            this.Show();
-            this.WindowState = FormWindowState.Normal;
+            this.WindowState = FormWindowState.Minimized;// checks if the form is Minimized
+            this.Show(); //shows the image
+            this.WindowState = FormWindowState.Normal;//makes it show up in front of any background programs
             t.Abort();
         }
 
