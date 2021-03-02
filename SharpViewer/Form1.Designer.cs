@@ -45,7 +45,7 @@ namespace SharpViewer
             // 
             this.btnLeft.CausesValidation = false;
             this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLeft.Location = new System.Drawing.Point(241, 386);
+            this.btnLeft.Location = new System.Drawing.Point(105, 459);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(87, 52);
             this.btnLeft.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace SharpViewer
             // 
             this.btnRight.CausesValidation = false;
             this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRight.Location = new System.Drawing.Point(472, 386);
+            this.btnRight.Location = new System.Drawing.Point(606, 459);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(87, 52);
             this.btnRight.TabIndex = 1;
@@ -114,9 +114,9 @@ namespace SharpViewer
             // 
             // imgLoaded
             // 
-            this.imgLoaded.Location = new System.Drawing.Point(105, 57);
+            this.imgLoaded.Location = new System.Drawing.Point(66, 55);
             this.imgLoaded.Name = "imgLoaded";
-            this.imgLoaded.Size = new System.Drawing.Size(588, 306);
+            this.imgLoaded.Size = new System.Drawing.Size(644, 377);
             this.imgLoaded.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgLoaded.TabIndex = 4;
             this.imgLoaded.TabStop = false;
@@ -125,13 +125,15 @@ namespace SharpViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 561);
             this.Controls.Add(this.imgLoaded);
             this.Controls.Add(this.lblImgName);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Form1";
             this.Text = "SharpViewer";
             this.TopMost = true;
