@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace SharpViewer
 {
-    public partial class Form1 : Form
+    public partial class main : Form
     {
 
         Bitmap[] images;                //Stores the images themselves
@@ -22,7 +22,7 @@ namespace SharpViewer
         bool imgOpened = false;         //Keeps track of whether we've opened an image yet or not
         
             
-        public Form1()
+        public main()
         {
             //Starts the program with the splashscreen, waits 6 seconds, then opens the program.
             Thread t = new Thread(new ThreadStart(splashscreen));

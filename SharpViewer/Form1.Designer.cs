@@ -1,7 +1,7 @@
 ﻿
 namespace SharpViewer
 {
-    partial class Form1
+    partial class main
     {
         /// <summary>
         /// Required designer variable.
@@ -121,7 +121,7 @@ namespace SharpViewer
             this.imgLoaded.TabIndex = 4;
             this.imgLoaded.TabStop = false;
             // 
-            // Form1
+            // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +134,7 @@ namespace SharpViewer
             this.MainMenuStrip = this.menuStrip1;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "Form1";
+            this.Name = "main";
             this.Text = "SharpViewer";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
