@@ -69,6 +69,7 @@ namespace SharpViewer
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
             {
                 e.IsInputKey = true;
+
             }
         }
 
