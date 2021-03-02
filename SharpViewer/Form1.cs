@@ -20,10 +20,10 @@ namespace SharpViewer
         string folderDirectory = "";    //Stores the directory for the folder all the images are in
         int imgIndex = 0;               //Index for the current selected image in the images array
         bool imgOpened = false;         //Keeps track of whether we've opened an image yet or not
-        
+        bool choice = false;
             
         public main()
-        {  if choice = true
+        {  if (choice = true)
                 {
                 //Starts the program with the splashscreen, waits 6 seconds, then opens the program.
                 Thread t = new Thread(new ThreadStart(splashscreen));
