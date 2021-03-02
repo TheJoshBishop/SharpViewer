@@ -29,43 +29,17 @@ namespace SharpViewer
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLeft = new System.Windows.Forms.Button();
-            this.btnRight = new System.Windows.Forms.Button();
             this.lblImgName = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgLoaded = new System.Windows.Forms.PictureBox();
+            this.btnRight = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoaded)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnLeft
-            // 
-            this.btnLeft.CausesValidation = false;
-            this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLeft.Location = new System.Drawing.Point(105, 459);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(87, 52);
-            this.btnLeft.TabIndex = 0;
-            this.btnLeft.TabStop = false;
-            this.btnLeft.Text = "Previous";
-            this.btnLeft.UseVisualStyleBackColor = true;
-            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
-            // 
-            // btnRight
-            // 
-            this.btnRight.CausesValidation = false;
-            this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRight.Location = new System.Drawing.Point(606, 459);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(87, 52);
-            this.btnRight.TabIndex = 1;
-            this.btnRight.TabStop = false;
-            this.btnRight.Text = "Next";
-            this.btnRight.UseVisualStyleBackColor = true;
-            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // lblImgName
             // 
@@ -120,6 +94,32 @@ namespace SharpViewer
             this.imgLoaded.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgLoaded.TabIndex = 4;
             this.imgLoaded.TabStop = false;
+            // 
+            // btnRight
+            // 
+            this.btnRight.CausesValidation = false;
+            this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRight.Image = global::SharpViewer.Properties.Resources.RightArrowBtn;
+            this.btnRight.Location = new System.Drawing.Point(626, 459);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(50, 50);
+            this.btnRight.TabIndex = 1;
+            this.btnRight.TabStop = false;
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.CausesValidation = false;
+            this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeft.Image = global::SharpViewer.Properties.Resources.LeftArrowBtn;
+            this.btnLeft.Location = new System.Drawing.Point(125, 459);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(50, 50);
+            this.btnLeft.TabIndex = 0;
+            this.btnLeft.TabStop = false;
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // main
             // 

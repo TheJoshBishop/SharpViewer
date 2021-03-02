@@ -63,6 +63,16 @@ namespace SharpViewer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LeftArrowBtn {
+            get {
+                object obj = ResourceManager.GetObject("LeftArrowBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
@@ -76,6 +86,16 @@ namespace SharpViewer.Properties {
         internal static System.Drawing.Bitmap loading1 {
             get {
                 object obj = ResourceManager.GetObject("loading1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RightArrowBtn {
+            get {
+                object obj = ResourceManager.GetObject("RightArrowBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
