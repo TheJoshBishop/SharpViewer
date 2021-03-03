@@ -71,7 +71,7 @@ namespace SharpViewer
             this.menuFileOpen,
             this.optionsToolStripMenuItem});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(46, 24);
+            this.menuFile.Size = new System.Drawing.Size(46, 26);
             this.menuFile.Text = "File";
             // 
             // menuFileOpen
@@ -91,7 +91,7 @@ namespace SharpViewer
             // imgLoaded
             // 
             this.imgLoaded.Location = new System.Drawing.Point(88, 68);
-            this.imgLoaded.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLoaded.Margin = new System.Windows.Forms.Padding(4);
             this.imgLoaded.Name = "imgLoaded";
             this.imgLoaded.Size = new System.Drawing.Size(859, 464);
             this.imgLoaded.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +104,7 @@ namespace SharpViewer
             this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRight.Image = global::SharpViewer.Properties.Resources.RightArrowBtn;
             this.btnRight.Location = new System.Drawing.Point(835, 565);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(67, 62);
             this.btnRight.TabIndex = 1;
@@ -118,7 +118,7 @@ namespace SharpViewer
             this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeft.Image = global::SharpViewer.Properties.Resources.LeftArrowBtn;
             this.btnLeft.Location = new System.Drawing.Point(167, 565);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(67, 62);
             this.btnLeft.TabIndex = 0;
@@ -133,7 +133,7 @@ namespace SharpViewer
             this.numberImagesinFolder.Name = "numberImagesinFolder";
             this.numberImagesinFolder.Size = new System.Drawing.Size(12, 17);
             this.numberImagesinFolder.TabIndex = 5;
-            this.numberImagesinFolder.Text = "f";
+            this.numberImagesinFolder.Text = " ";
             // 
             // main
             // 
@@ -147,7 +147,7 @@ namespace SharpViewer
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1061, 728);
             this.Name = "main";
             this.Text = "SharpViewer";
