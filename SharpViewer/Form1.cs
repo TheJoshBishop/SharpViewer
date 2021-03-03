@@ -70,7 +70,7 @@ namespace SharpViewer
 
             if (Properties.Settings.Default.DarkMode == true)
             {
-                this.BackColor = Color.FromArgb(50, 50, 50);
+                this.BackColor = SystemColors.ControlDarkDark;
             }
             else
             {
