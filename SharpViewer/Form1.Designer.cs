@@ -44,6 +44,7 @@ namespace SharpViewer
             // 
             // lblImgName
             // 
+            this.lblImgName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblImgName.AutoSize = true;
             this.lblImgName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImgName.Location = new System.Drawing.Point(449, 11);
@@ -130,6 +131,7 @@ namespace SharpViewer
             // 
             // numberImagesinFolder
             // 
+            this.numberImagesinFolder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.numberImagesinFolder.AutoSize = true;
             this.numberImagesinFolder.Location = new System.Drawing.Point(695, 38);
             this.numberImagesinFolder.Name = "numberImagesinFolder";
@@ -156,6 +158,7 @@ namespace SharpViewer
             this.Text = "SharpViewer";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResizeEnd += new System.EventHandler(this.main_ResizeEnd);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Resize += new System.EventHandler(this.main_Resize);
             this.menuStrip1.ResumeLayout(false);
