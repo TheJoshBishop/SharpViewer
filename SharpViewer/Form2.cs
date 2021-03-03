@@ -11,13 +11,13 @@ using System.Windows.Forms;
 namespace SharpViewer
 {
     public partial class splashscreen : Form
-    {
+    {//initalizes the splashscreen
         public splashscreen()
         {
             InitializeComponent();
         }
 
-
+        //creates a timer
         Timer tmr;
 
         private void splashscreen_Shown(object sender, EventArgs e)
@@ -27,13 +27,13 @@ namespace SharpViewer
             tmr = new Timer();
 
 
-            
+            //sets timer to 6 seconds 
             tmr.Interval = 6000;
 
             //starts the timer
 
             tmr.Start();
-
+            //creates timer progress
             tmr.Tick += tmr_Tick;
 
         }
@@ -42,11 +42,11 @@ namespace SharpViewer
 
         {
 
-            //after 3 sec stop the timer
+            //after 6 sec stop the timer
 
             tmr.Stop();
            
-
+            //hides the splashscreen
             this.Hide();
 
         }
