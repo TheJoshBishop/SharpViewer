@@ -235,6 +235,12 @@ namespace SharpViewer
             imgLoaded.Width = this.Width - size;
             imgLoaded.Height = this.Height - size;
         }
+
+        private void main_ResizeEnd(object sender, EventArgs e)
+        {
+            imgLoaded.Width = this.Width - size;
+            imgLoaded.Height = this.Height - size;
+        }
     }
 }
 
