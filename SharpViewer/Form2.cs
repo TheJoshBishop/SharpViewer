@@ -26,8 +26,8 @@ namespace SharpViewer
 
             tmr = new Timer();
 
-            
 
+            
             tmr.Interval = 6000;
 
             //starts the timer
