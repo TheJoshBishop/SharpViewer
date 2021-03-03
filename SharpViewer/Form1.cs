@@ -12,11 +12,16 @@ using System.Threading;
 
 namespace SharpViewer
 {
+    //Fix bug where the goto next or prev image snaps to the first or second image
+    //Get the main window to use saved data from the options window
+    //Fix the filtering for the files
+
     public partial class main : Form
     {
 
         Bitmap[] images;                //Stores the images themselves
-        string[] rawFiles;              //Stores the string paths to each of the images
+        string[] rawFiles;              //Stores the string paths to each of the files in the folder
+        List<string> rawImgFiles = new List<string>();      //Stores the string paths to each of the files that are images
         string folderDirectory = "";    //Stores the directory for the folder all the images are in
         int imgIndex = 0;               //Index for the current selected image in the images array
         bool imgOpened = false;         //Keeps track of whether we've opened an image yet or not
@@ -100,7 +105,9 @@ namespace SharpViewer
         {
             //Creates an OpenFileDialog
             OpenFileDialog openDialog = new OpenFileDialog();
-            
+
+            openDialog.Filter = "All Image Types|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif|BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff";
+
             //If we press the OK button
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
@@ -110,15 +117,20 @@ namespace SharpViewer
 
                 folderDirectory = Path.GetDirectoryName(openDialog.FileName);   //Gets the folder directory from that image's directory (minus the image name)
 
-                rawFiles = Directory.GetFiles(folderDirectory);     //Gets the string directories for all the 
-                images = new Bitmap[rawFiles.Length];
+                rawFiles = Directory.GetFiles(folderDirectory);     //Gets the string directories for all the files in the folder
+
+                foreach (string file in rawFiles)
+                {
+                    if (IsCorrectFileType(file))
+                    {
+                        rawImgFiles.Add(file);
+                    }
+                }
+                images = new Bitmap[rawImgFiles.Count];
 
                 for (int i = 0; i < images.Length; i++)
                 {
-                    if (IsCorrectFileType(rawFiles[i]))
-                    {
-                        images[i] = new Bitmap(rawFiles[i]);
-                    }
+                    images[i] = new Bitmap(rawImgFiles[i]);
                 }
                 
                 openDialog.Dispose();
@@ -156,7 +168,7 @@ namespace SharpViewer
                     imgIndex++;
                 }
                 imgLoaded.Image = images[imgIndex];
-                lblImgName.Text = Path.GetFileName(rawFiles[imgIndex]);
+                lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);
             }
             else
             {
@@ -179,7 +191,7 @@ namespace SharpViewer
                     imgIndex--;
                 }
                 imgLoaded.Image = images[imgIndex];
-                lblImgName.Text = Path.GetFileName(rawFiles[imgIndex]);
+                lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);
             }
             else
             {
