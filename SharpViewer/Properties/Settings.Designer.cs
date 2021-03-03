@@ -23,21 +23,27 @@ namespace SharpViewer.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ShowSplash {
             get {
                 return ((bool)(this["ShowSplash"]));
             }
+            set {
+                this["ShowSplash"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool KeepDir {
             get {
                 return ((bool)(this["KeepDir"]));
+            }
+            set {
+                this["KeepDir"] = value;
             }
         }
     }

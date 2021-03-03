@@ -31,26 +31,15 @@ namespace SharpViewer
 
         void SaveData()
         {
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            AppSettingsSection app = config.AppSettings;
-            app.Settings.Add("ShowSplash", splashscreenEnabled.Checked.ToString());
-            app.Settings.Add("KeepDir", keepDirectory.Checked.ToString());
-            config.Save(ConfigurationSaveMode.Full);
+            Properties.Settings.Default.ShowSplash = splashscreenEnabled.Checked;
+            Properties.Settings.Default.KeepDir = keepDirectory.Checked;
+            Properties.Settings.Default.Save();
         }
 
         private void OptionsWindow_Load(object sender, EventArgs e)
         {
-            string _checkSplash = ConfigurationManager.AppSettings["ShowSplash"];
-            string _checkKeepDir = ConfigurationManager.AppSettings["KeepDir"];
-
-            if (_checkSplash != null)
-            {
-                splashscreenEnabled.Checked = bool.Parse(_checkSplash);
-            }
-            if (_checkKeepDir != null)
-            {
-                keepDirectory.Checked = bool.Parse(_checkSplash);
-            }
+            splashscreenEnabled.Checked = Properties.Settings.Default.ShowSplash;
+            keepDirectory.Checked = Properties.Settings.Default.KeepDir;
         }
     }
 }
