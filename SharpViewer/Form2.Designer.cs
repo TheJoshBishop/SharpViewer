@@ -64,6 +64,7 @@ namespace SharpViewer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "splashscreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.splashscreen_Load);
             this.Shown += new System.EventHandler(this.splashscreen_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.angryface)).EndInit();
             this.ResumeLayout(false);
