@@ -109,6 +109,14 @@ namespace SharpViewer
             //Creates an OpenFileDialog
             OpenFileDialog openDialog = new OpenFileDialog();
 
+            if (Properties.Settings.Default.KeepDir == true)
+            {
+                if (Properties.Settings.Default.LastDir != null)
+                {
+                    openDialog.InitialDirectory = Properties.Settings.Default.LastDir;
+                }
+            }
+
             openDialog.Filter = "All Image Types|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif|BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff";
 
             //If we press the OK button
@@ -121,6 +129,9 @@ namespace SharpViewer
                 imgLoaded.Image = new Bitmap(openDialog.FileName);  //Creates a Bitmap from that file based on the directory
 
                 folderDirectory = Path.GetDirectoryName(openDialog.FileName);   //Gets the folder directory from that image's directory (minus the image name)
+
+                Properties.Settings.Default.LastDir = folderDirectory;
+                Properties.Settings.Default.Save();
 
                 rawFiles = Directory.GetFiles(folderDirectory);     //Gets the string directories for all the files in the folder
                 
