@@ -67,6 +67,15 @@ namespace SharpViewer
                 //Adds the event to the current control
                 control.PreviewKeyDown += new PreviewKeyDownEventHandler(control_PreviewKeyDown);
             }
+
+            if (Properties.Settings.Default.DarkMode == true)
+            {
+                this.BackColor = Color.FromArgb(50, 50, 50);
+            }
+            else
+            {
+                this.BackColor = SystemColors.Control;
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

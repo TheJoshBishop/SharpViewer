@@ -42,6 +42,15 @@ namespace SharpViewer
             splashscreenEnabled.Checked = Properties.Settings.Default.ShowSplash;
             keepDirectory.Checked = Properties.Settings.Default.KeepDir;
             HaveDarkMode.Checked = Properties.Settings.Default.DarkMode;
+
+            if (Properties.Settings.Default.DarkMode == true)
+            {
+                this.BackColor = Color.FromArgb(50, 50, 50);
+            }
+            else
+            {
+                this.BackColor = SystemColors.Control;
+            }
         }
     }
 }
