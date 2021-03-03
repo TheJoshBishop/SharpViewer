@@ -162,10 +162,12 @@ namespace SharpViewer
                 if (imgIndex >= images.Length - 1)
                 {
                     imgIndex = 0;
+                    numberImagesinFolder.Text = imgIndex+1 + " of " + images.Length;
                 }
                 else
                 {
                     imgIndex++;
+                    numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                 }
                 imgLoaded.Image = images[imgIndex];
                 lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);
@@ -185,10 +187,12 @@ namespace SharpViewer
                 if (imgIndex - 1 < 0)
                 {
                     imgIndex = images.Length - 1;
+                    numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                 }
                 else
                 {
                     imgIndex--;
+                    numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                 }
                 imgLoaded.Image = images[imgIndex];
                 lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);
