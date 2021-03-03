@@ -12,9 +12,9 @@ using System.Threading;
 
 namespace SharpViewer
 {
-    //Fix bug where the goto next or prev image snaps to the first or second image
+    //FIXED - Fix bug where the goto next or prev image snaps to the first or second image
     //Get the main window to use saved data from the options window
-    //Fix the filtering for the files
+    //FIXED - Fix the filtering for the files
 
     public partial class main : Form
     {
@@ -139,6 +139,14 @@ namespace SharpViewer
                 btnRight.Enabled = true;
 
                 imgOpened = true;
+
+                for (int i = 0;i < rawImgFiles.Count; i++)
+                {
+                    if (openDialog.FileName == rawImgFiles[i])
+                    {
+                        imgIndex = i;
+                    }
+                }
             }
         }
 
