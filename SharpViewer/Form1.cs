@@ -111,6 +111,8 @@ namespace SharpViewer
             //If we press the OK button
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
+                rawFiles = null;
+                rawImgFiles = new List<string>();
                 lblImgName.Text = openDialog.SafeFileName;      //Sets the lable to the opened file's name
 
                 imgLoaded.Image = new Bitmap(openDialog.FileName);  //Creates a Bitmap from that file based on the directory
@@ -118,7 +120,7 @@ namespace SharpViewer
                 folderDirectory = Path.GetDirectoryName(openDialog.FileName);   //Gets the folder directory from that image's directory (minus the image name)
 
                 rawFiles = Directory.GetFiles(folderDirectory);     //Gets the string directories for all the files in the folder
-
+                
                 foreach (string file in rawFiles)
                 {
                     if (IsCorrectFileType(file))
