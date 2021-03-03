@@ -33,6 +33,7 @@ namespace SharpViewer
         {
             Properties.Settings.Default.ShowSplash = splashscreenEnabled.Checked;
             Properties.Settings.Default.KeepDir = keepDirectory.Checked;
+            Properties.Settings.Default.DarkMode = HaveDarkMode.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -40,6 +41,7 @@ namespace SharpViewer
         {
             splashscreenEnabled.Checked = Properties.Settings.Default.ShowSplash;
             keepDirectory.Checked = Properties.Settings.Default.KeepDir;
+            HaveDarkMode.Checked = Properties.Settings.Default.DarkMode;
         }
     }
 }

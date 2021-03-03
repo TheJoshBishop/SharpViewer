@@ -32,6 +32,7 @@ namespace SharpViewer
             this.splashscreenEnabled = new System.Windows.Forms.CheckBox();
             this.keepDirectory = new System.Windows.Forms.CheckBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.HaveDarkMode = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // splashscreenEnabled
@@ -59,7 +60,7 @@ namespace SharpViewer
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(365, 176);
+            this.btnClose.Location = new System.Drawing.Point(441, 175);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -67,11 +68,23 @@ namespace SharpViewer
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // HaveDarkMode
+            // 
+            this.HaveDarkMode.AutoSize = true;
+            this.HaveDarkMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HaveDarkMode.Location = new System.Drawing.Point(99, 122);
+            this.HaveDarkMode.Name = "HaveDarkMode";
+            this.HaveDarkMode.Size = new System.Drawing.Size(356, 24);
+            this.HaveDarkMode.TabIndex = 3;
+            this.HaveDarkMode.Text = "Janky Dark Mode (enabled when next opened)";
+            this.HaveDarkMode.UseVisualStyleBackColor = true;
+            // 
             // OptionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 211);
+            this.ClientSize = new System.Drawing.Size(525, 207);
+            this.Controls.Add(this.HaveDarkMode);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.keepDirectory);
             this.Controls.Add(this.splashscreenEnabled);
@@ -96,5 +109,6 @@ namespace SharpViewer
         private System.Windows.Forms.CheckBox splashscreenEnabled;
         private System.Windows.Forms.CheckBox keepDirectory;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.CheckBox HaveDarkMode;
     }
 }
