@@ -147,6 +147,7 @@ namespace SharpViewer
                     if (openDialog.FileName == rawImgFiles[i])
                     {
                         imgIndex = i;
+                        numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                     }
                 }
             }
