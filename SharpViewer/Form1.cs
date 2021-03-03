@@ -26,6 +26,7 @@ namespace SharpViewer
         int imgIndex = 0;               //Index for the current selected image in the images array
         bool imgOpened = false;         //Keeps track of whether we've opened an image yet or not
         bool choice = false;
+        int size;
             
         public main()
         {  if (choice = true)
@@ -37,6 +38,7 @@ namespace SharpViewer
                 t.Abort();
             }
             InitializeComponent();
+            size = this.Width - imgLoaded.Width;
             this.WindowState = FormWindowState.Minimized;// checks if the form is Minimized
             this.Show(); //shows the image
             this.WindowState = FormWindowState.Normal;//makes it show up in front of any background programs
@@ -226,6 +228,12 @@ namespace SharpViewer
         {
             OptionsWindow ow = new OptionsWindow();
             ow.Show();
+        }
+
+        private void main_Resize(object sender, EventArgs e)
+        {
+            imgLoaded.Width = this.Width - size;
+            imgLoaded.Height = this.Height - size;
         }
     }
 }

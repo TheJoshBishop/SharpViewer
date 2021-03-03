@@ -71,7 +71,7 @@ namespace SharpViewer
             this.menuFileOpen,
             this.optionsToolStripMenuItem});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(46, 26);
+            this.menuFile.Size = new System.Drawing.Size(46, 24);
             this.menuFile.Text = "File";
             // 
             // menuFileOpen
@@ -90,7 +90,7 @@ namespace SharpViewer
             // 
             // imgLoaded
             // 
-            this.imgLoaded.Location = new System.Drawing.Point(88, 68);
+            this.imgLoaded.Location = new System.Drawing.Point(112, 70);
             this.imgLoaded.Margin = new System.Windows.Forms.Padding(4);
             this.imgLoaded.Name = "imgLoaded";
             this.imgLoaded.Size = new System.Drawing.Size(859, 464);
@@ -100,6 +100,7 @@ namespace SharpViewer
             // 
             // btnRight
             // 
+            this.btnRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRight.CausesValidation = false;
             this.btnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRight.Image = global::SharpViewer.Properties.Resources.RightArrowBtn;
@@ -114,6 +115,7 @@ namespace SharpViewer
             // 
             // btnLeft
             // 
+            this.btnLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLeft.CausesValidation = false;
             this.btnLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeft.Image = global::SharpViewer.Properties.Resources.LeftArrowBtn;
@@ -148,12 +150,14 @@ namespace SharpViewer
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1061, 728);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SharpViewer";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.Resize += new System.EventHandler(this.main_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoaded)).EndInit();
