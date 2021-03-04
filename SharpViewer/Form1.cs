@@ -12,9 +12,7 @@ using System.Threading;
 
 namespace SharpViewer
 {
-    //FIXED - Fix bug where the goto next or prev image snaps to the first or second image
-    //Get the main window to use saved data from the options window
-    //FIXED - Fix the filtering for the files
+    //ERROR: SAVED SETTINGS NOT SAVING ARGH WHY NONONONONONONONO help
 
     public partial class main : Form
     {
@@ -178,7 +176,7 @@ namespace SharpViewer
 
         bool IsCorrectFileType(string file)
         {
-            if (file.Contains(".jpg") || file.Contains(".png") || file.Contains(".bmp") || file.Contains(".jpeg") || file.Contains(".gif"))
+            if (file.Contains(".jpg") || file.Contains(".png") || file.Contains(".bmp") || file.Contains(".jpeg") || file.Contains(".gif") || file.Contains(".tif"))
             {
                 return true;
 

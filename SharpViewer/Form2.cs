@@ -21,7 +21,6 @@ namespace SharpViewer
         Timer tmr;
 
         private void splashscreen_Shown(object sender, EventArgs e)
-
         {
 
             tmr = new Timer();
@@ -39,7 +38,6 @@ namespace SharpViewer
         }
 
         void tmr_Tick(object sender, EventArgs e)
-
         {
 
             //after 6 sec stop the timer

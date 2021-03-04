@@ -40,7 +40,7 @@ namespace SharpViewer
 
         private void OptionsWindow_Load(object sender, EventArgs e)
         {
-            SaveData();
+            LoadData();
         }
 
         void LoadData()
