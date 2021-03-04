@@ -31,13 +31,13 @@ namespace SharpViewer
         {
             this.angryface = new System.Windows.Forms.PictureBox();
             this.loading = new System.Windows.Forms.ProgressBar();
+            this.welcome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.angryface)).BeginInit();
             this.SuspendLayout();
             // 
             // angryface
             // 
             this.angryface.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.angryface.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.angryface.Image = global::SharpViewer.Properties.Resources.loading1;
             this.angryface.Location = new System.Drawing.Point(89, 12);
             this.angryface.Name = "angryface";
@@ -47,11 +47,22 @@ namespace SharpViewer
             // 
             // loading
             // 
-            this.loading.Location = new System.Drawing.Point(172, 368);
+            this.loading.Location = new System.Drawing.Point(175, 386);
             this.loading.Name = "loading";
             this.loading.Size = new System.Drawing.Size(434, 23);
             this.loading.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.loading.TabIndex = 1;
+            // 
+            // welcome
+            // 
+            this.welcome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.welcome.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome.Location = new System.Drawing.Point(83, 304);
+            this.welcome.Name = "welcome";
+            this.welcome.Size = new System.Drawing.Size(615, 54);
+            this.welcome.TabIndex = 2;
+            this.welcome.Text = "Welcome to the 4 programeers img viewer";
             // 
             // splashscreen
             // 
@@ -59,11 +70,13 @@ namespace SharpViewer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.welcome);
             this.Controls.Add(this.loading);
             this.Controls.Add(this.angryface);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "splashscreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "welcome to the four programerrs img viewer";
             this.Load += new System.EventHandler(this.splashscreen_Load);
             this.Shown += new System.EventHandler(this.splashscreen_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.angryface)).EndInit();
@@ -75,5 +88,6 @@ namespace SharpViewer
 
         private System.Windows.Forms.PictureBox angryface;
         private System.Windows.Forms.ProgressBar loading;
+        private System.Windows.Forms.Label welcome;
     }
 }
