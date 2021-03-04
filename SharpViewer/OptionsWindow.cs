@@ -51,11 +51,37 @@ namespace SharpViewer
 
             if (Properties.Settings.Default.DarkMode == true)
             {
-                this.BackColor = SystemColors.ControlDarkDark;
+                EnableDarkMode();
             }
             else
             {
-                this.BackColor = SystemColors.Control;
+                DisableDarkMode();
+            }
+        }
+
+        void EnableDarkMode()
+        {
+            this.BackColor = Color.FromArgb(50, 50, 50);
+            foreach (Control c in this.Controls)
+            {
+                c.ForeColor = SystemColors.ControlLightLight;
+                if (c is Button)
+                {
+                    c.BackColor = Color.FromArgb(60, 60, 60);
+                }
+            }
+        }
+
+        void DisableDarkMode()
+        {
+            this.BackColor = SystemColors.Control;
+            foreach (Control c in this.Controls)
+            {
+                c.ForeColor = SystemColors.ControlText;
+                if (c is Button)
+                {
+                    c.BackColor = SystemColors.Control;
+                }
             }
         }
     }

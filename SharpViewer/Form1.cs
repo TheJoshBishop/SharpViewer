@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace SharpViewer
 {
-    //ERROR: SAVED SETTINGS NOT SAVING ARGH WHY NONONONONONONONO help
+    
 
     public partial class main : Form
     {
@@ -68,11 +68,31 @@ namespace SharpViewer
 
             if (Properties.Settings.Default.DarkMode == true)
             {
-                this.BackColor = SystemColors.ControlDarkDark;
+                EnableDarkMode();
             }
             else
             {
-                this.BackColor = SystemColors.Control;
+                DisableDarkMode();
+            }
+        }
+
+        void EnableDarkMode()
+        {
+            this.BackColor = Color.FromArgb(50, 50, 50);
+            menuStrip1.BackColor = Color.FromArgb(60, 60, 60);
+            foreach (Control c in this.Controls)
+            {
+                c.ForeColor = SystemColors.ControlLightLight;
+            }
+        }
+
+        void DisableDarkMode()
+        {
+            this.BackColor = SystemColors.Control;
+            menuStrip1.BackColor = SystemColors.Control;
+            foreach (Control c in this.Controls)
+            {
+                c.ForeColor = SystemColors.ControlText;
             }
         }
 
