@@ -66,32 +66,39 @@ namespace SharpViewer
                 control.PreviewKeyDown += new PreviewKeyDownEventHandler(control_PreviewKeyDown);
             }
 
+            //Checks the settings to see if the darkmode setting is enabled
             if (Properties.Settings.Default.DarkMode == true)
             {
-                EnableDarkMode();
+                EnableDarkMode();   //Enable dark mode
             }
             else
             {
-                DisableDarkMode();
+                DisableDarkMode();  //Disable dark mode
             }
         }
 
+        //Does the changes for dark mode.
         void EnableDarkMode()
         {
-            this.BackColor = Color.FromArgb(50, 50, 50);
-            menuStrip1.BackColor = Color.FromArgb(60, 60, 60);
+            this.BackColor = Color.FromArgb(50, 50, 50);        //Changes the back color of the window
+            menuStrip1.BackColor = Color.FromArgb(60, 60, 60);  //Changes the back color of the menu strip
+            //Loops through all the elements to change the text color
             foreach (Control c in this.Controls)
             {
+                //Changes the forecolor for each element
                 c.ForeColor = SystemColors.ControlLightLight;
             }
         }
 
+        //Changes back to the default colors
         void DisableDarkMode()
         {
-            this.BackColor = SystemColors.Control;
-            menuStrip1.BackColor = SystemColors.Control;
+            this.BackColor = SystemColors.Control;          //Changes the back color of the window
+            menuStrip1.BackColor = SystemColors.Control;    //Changes the back color of the menu strip
+            //Loops through all the elements to change the text color
             foreach (Control c in this.Controls)
             {
+                //Changes the forecolor for each element
                 c.ForeColor = SystemColors.ControlText;
             }
         }
@@ -99,7 +106,7 @@ namespace SharpViewer
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             //If we press the 'next' button...
-            if (e.KeyCode==Keys.Right || e.KeyCode == Keys.N)
+            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.N)
             {
                 GotoNextImage();
             }
@@ -161,41 +168,52 @@ namespace SharpViewer
                 Properties.Settings.Default.Save();
 
                 rawFiles = Directory.GetFiles(folderDirectory);     //Gets the string directories for all the files in the folder
-                
+
+                //Goes through each directory in the list
                 foreach (string file in rawFiles)
                 {
+                    //checks that the file directory contains the proper extension type
                     if (IsCorrectFileType(file))
                     {
+                        //Adds the file to the list that only contains images
                         rawImgFiles.Add(file);
                     }
                 }
-                images = new Bitmap[rawImgFiles.Count];
+                images = new Bitmap[rawImgFiles.Count]; //Sets the bitmap array to the same length of the rawImgFiles array
 
+                //Loops through each image in the rawImgFile list and creates a new Bitmap for each entry in the list
                 for (int i = 0; i < images.Length; i++)
                 {
-                    images[i] = new Bitmap(rawImgFiles[i]);
+                    images[i] = new Bitmap(rawImgFiles[i]);     //Creates a Bitmap at position 'i' with the rawImgFiles[i] data
                 }
-                
+
+                //Closes the openDialog
                 openDialog.Dispose();
 
+                //Enables the buttons for clicking
                 btnLeft.Enabled = true;
                 btnRight.Enabled = true;
 
+                //Sets the imgOpened true for reference in other parts of the code
                 imgOpened = true;
 
-                for (int i = 0;i < rawImgFiles.Count; i++)
+                //Loops through all the images to see what the image index of the opened image happens to be
+                for (int i = 0; i < rawImgFiles.Count; i++)
                 {
+                    //Compares the name of the opened image to each entry
                     if (openDialog.FileName == rawImgFiles[i])
                     {
                         imgIndex = i;
-                        numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
+                        numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;  //Sets the counter text to whatever the index is
                     }
                 }
             }
         }
 
+        //Checks the string to see if it contains the correct file type extension
         bool IsCorrectFileType(string file)
         {
+            //Big ol' if statement
             if (file.Contains(".jpg") || file.Contains(".png") || file.Contains(".bmp") || file.Contains(".jpeg") || file.Contains(".gif") || file.Contains(".tif"))
             {
                 return true;
@@ -207,74 +225,81 @@ namespace SharpViewer
             }
         }
 
+        //Goes to next image by increasing the imgIndex
         void GotoNextImage()
         {
+            //Checks that an image is opened
             if (imgOpened == true)
             {
+                //Checks whether the imgIndex is at the maximum value for the array
                 if (imgIndex >= images.Length - 1)
                 {
+                    //If it is, go back to zero to loop back
                     imgIndex = 0;
-                    numberImagesinFolder.Text = imgIndex+1 + " of " + images.Length;
+                    numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                 }
                 else
                 {
+                    //Otherwise, keep increasing the imgIndex
                     imgIndex++;
                     numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                 }
-                imgLoaded.Image = images[imgIndex];
-                lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);
+                imgLoaded.Image = images[imgIndex];         //Sets the image on the screen to the current image based on the index
+                lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);      //Displays the image name
             }
             else
             {
+                //If the image isn't even opened yet, do nothing.
                 return;
             }
-            
+
             //Increase the index for the images array?
         }
+        //Goes to previous image by decreasing the imgIndex
         void GotoPreviousImage()
         {
-            //Decrerase the index for the images array?
+            //Checks that an image has been opened
             if (imgOpened == true)
             {
+                //Checks if the index is going below zero if we proceed
                 if (imgIndex - 1 < 0)
                 {
+                    //If it is, then loop back to the final index value, to loop back to the end of the folder
                     imgIndex = images.Length - 1;
                     numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                 }
                 else
                 {
+                    //Otherwise, keep decreasing the index.
                     imgIndex--;
                     numberImagesinFolder.Text = imgIndex + 1 + " of " + images.Length;
                 }
-                imgLoaded.Image = images[imgIndex];
-                lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);
+                imgLoaded.Image = images[imgIndex];         //Sets the image on the screen to the current image based on the index
+                lblImgName.Text = Path.GetFileName(rawImgFiles[imgIndex]);      //Displays the image name
             }
             else
             {
+                //If an image isn't even opened yet, do nothing.
                 return;
             }
         }
 
-        Bitmap[] getImages(string directory)//This might not be necessary...
-        {
-            // pull the images from the folder based on the directory given
-            return new Bitmap[0];
-            //This is a test comment for github commits
-            //This is another test comment for github commits
-        }
-
+        //Event to open the Options Window
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Creates the options Window, then shows it.
             OptionsWindow ow = new OptionsWindow();
             ow.Show();
         }
 
+        //Checks that the window's size doesn't get too small, at the start of the resizing
         private void main_Resize(object sender, EventArgs e)
         {
             imgLoaded.Width = this.Width - size;
             imgLoaded.Height = this.Height - size;
         }
 
+        //Also checks that the window's size doesn't get too small, at the end of the resizing
         private void main_ResizeEnd(object sender, EventArgs e)
         {
             imgLoaded.Width = this.Width - size;
